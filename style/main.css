@@ -7,3 +7,52 @@
 a{
     text-decoration: none;
 }
+
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: pink;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.header_text{
+    color: white;
+    font-size: 50px;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.columns{
+    width: 500px;
+    min-height: 700px;
+}
+
+.all-columns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.column1{
+    background-color: grey;
+
+}
+
+
+.column2{
+    background-color: blue;
+
+}
+
+
+.column3{
+    background-color: red;
+}
+

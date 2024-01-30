@@ -5,14 +5,48 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="js/vue.js"></script>
+    <script defer src="js/main.js"></script>
+    <link rel="stylesheet" href="style/main.css">
     <title>Notes</title>
-
-    <div id="app">
-
-        <h1>Notes</h1>
-    </div>
 </head>
 <body>
+
+<div id="app">
+    <header>
+        <img :src="logo" alt="Логотип">
+        <h1 class="header_text">{{ header }}</h1>
+    </header>
+
+    <main>
+        <div class="all-columns">
+            <div class="columns column1">
+                <p>1</p>
+            </div>
+            <div class="columns column2">
+
+            </div>
+            <div class="columns column3">
+
+            </div>
+        </div>
+
+
+        <form class="form" action="">
+
+            <h4>Форма создания заметок</h4>
+            <label for="title">Name:</label>
+            <input id="title" v-model="name" placeholder="title">
+
+            <label for="list">Name:</label>
+            <input id="list" v-model="name" placeholder="list">
+
+            <input type="submit" value="Submit">
+        </form>
+    </main>
+
+
+</div>
 
 </body>
 </html>
