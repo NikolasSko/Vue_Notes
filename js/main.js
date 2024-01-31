@@ -5,25 +5,15 @@ let app = new Vue({
         header: "Notes",
         currentNote: "",
         notes: [
-            {
-                text: 'Помыть посуду',
-                isCompleted: true
-            },
-            {
-                text: 'Постирать вещи',
-                isCompleted: true
-            },
-            {
-                text: 'Погладить вещи',
-                isCompleted: false
-            }
+
         ],
     },
     methods:{
         addNote: function(){
             this.notes.push({
                 text: this.currentNote,
-                isCompleted: false
+                isCompleted: false,
+                isDoing: false,
             });
             this.currentNote = "";
         },

@@ -30,17 +30,31 @@
                 <input class="input" v-model="currentNote" type="text" @keyup.enter="addNote">
 
                 <ul class="list" v-for="note in notes">
-                    <li class="cart">
+                    <li class="cart" v-if="note.isDoing === false && note.isCompleted === false">
                         <h4>{{note.text}}</h4>
+                        <button @click="note.isDoing = true">=></button>
                         <button @click="deleteNote(note.text)" class="delete">X</button>
                     </li>
                 </ul>
             </div>
             <div class="columns column2">
                 <h2 class="column-title">In progress</h2>
+                <ul class="list" v-for="note in notes" >
+                    <li class="cart" v-if="note.isDoing === true && note.isCompleted === false">
+                        <h4>{{note.text}}</h4>
+                        <button @click="note.isCompleted = true">✓</button>
+                        <button @click="deleteNote(note.text)" class="delete">X</button>
+                    </li>
+                </ul>
             </div>
             <div class="columns column3">
                 <h2 class="column-title">Done</h2>
+                <ul class="list" v-for="note in notes" >
+                <li class="cart" v-if="note.isDoing === true && note.isCompleted === true">
+                    <h4>{{note.text}}</h4>
+
+                </li>
+                </ul>
             </div>
         </div>
 
