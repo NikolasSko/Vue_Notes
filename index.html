@@ -19,30 +19,33 @@
     </header>
 
     <main>
+
+
+
+
+
         <div class="all-columns">
             <div class="columns column1">
-                <p>1</p>
+                <h2 class="column-title">New</h2>
+                <input class="input" v-model="currentNote" type="text" @keyup.enter="addNote">
+
+                <ul class="list" v-for="note in notes">
+                    <li class="cart">
+                        <h4>{{note.text}}</h4>
+                        <button @click="deleteNote(note.text)" class="delete">X</button>
+                    </li>
+                </ul>
             </div>
             <div class="columns column2">
-
+                <h2 class="column-title">In progress</h2>
             </div>
             <div class="columns column3">
-
+                <h2 class="column-title">Done</h2>
             </div>
         </div>
 
 
-        <form class="form" action="">
 
-            <h4>Форма создания заметок</h4>
-            <label for="title">Name:</label>
-            <input id="title" v-model="name" placeholder="title">
-
-            <label for="list">Name:</label>
-            <input id="list" v-model="name" placeholder="list">
-
-            <input type="submit" value="Submit">
-        </form>
     </main>
 
 

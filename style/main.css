@@ -25,7 +25,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 30px;
 }
 
 .columns{
@@ -37,22 +37,47 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    gap: 70px;
 
 }
 
 .column1{
-    background-color: grey;
-
+    background-color: #ffec74;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
 
 .column2{
-    background-color: blue;
-
+    background-color: #f36b6b;
 }
 
 
 .column3{
-    background-color: red;
+    background-color: #7f7fd9;
+}
+
+.list{
+    list-style-type: none;
+}
+
+.cart{
+    background-color: pink;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.input{
+    margin: 0 auto;
+}
+
+.column-title{
+    text-align: center;
 }
 
