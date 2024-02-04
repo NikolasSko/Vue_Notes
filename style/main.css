@@ -16,68 +16,32 @@ header{
     margin-bottom: 10px;
 }
 
-.header_text{
-    color: white;
-    font-size: 50px;
-}
-
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-}
-
 .columns{
-    width: 500px;
-    min-height: 700px;
-}
-
-.all-columns{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    gap: 70px;
-
+    justify-content: space-around;
 }
 
-.column1{
-    background-color: #ffec74;
-    text-align: center;
+.header_content{
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    flex-direction: row;
+    gap: 500px;
+    align-items: center;
 }
 
-
-.column2{
-    background-color: #f36b6b;
+.header_content h2{
+    font-size: 40px;
+    color: white;
 }
 
-
-.column3{
-    background-color: #7f7fd9;
+.header_content img{
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    color: white;
 }
 
-.list{
+.li{
     list-style-type: none;
-}
-
-.cart{
-    background-color: pink;
-    padding: 10px;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-}
-
-.input{
-    margin: 0 auto;
-}
-
-.column-title{
-    text-align: center;
 }
 
