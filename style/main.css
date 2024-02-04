@@ -19,7 +19,8 @@ header{
 .columns{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
+
 }
 
 .header_content{
@@ -44,4 +45,49 @@ header{
 .li{
     list-style-type: none;
 }
+
+.column{
+    min-width: 400px;
+    min-height: 600px;
+    text-align: center;
+    border-radius: 10%;
+}
+
+.columnNew{
+    background-color: #47cedf;
+
+}
+
+.columnProcess{
+    background-color: #c9fe60;
+
+}
+
+.columnDone{
+    background-color: #59ffa6;
+
+}
+
+.card{
+    margin-bottom: 30px;
+}
+
+.buttonDelete{
+    padding: 4px;
+    border: 0;
+    color: white;
+    margin-top: 10px;
+    background-color: red;
+}
+
+.buttonAdd{
+    padding: 4px;
+    border: 0;
+    color: white;
+    margin-top: 10px;
+    background-color: green;
+}
+
+
+
 

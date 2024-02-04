@@ -11,9 +11,9 @@ Vue.component('todo-item', {
 Vue.component('columns', {
     template: `
         <div class="columns">
-            <column title="New" :cards="newColumn" :locked="locked" @add-card="addCard('newColumn', $event)" @remove-card="removeCard('newColumn', $event)" @save-local-storage="saveToLocalStorage" @move-card-to-in-progress="moveCardToInProgress" @move-card-to-completed="moveCardToCompleted" @move-card-to-new="moveCardToNew"></column>
-            <column title="In process" :cards="inProgressColumn" @remove-card="removeCard('inProgressColumn', $event)" @save-local-storage="saveToLocalStorage" @move-card-to-in-progress="moveCardToInProgress" @move-card-to-completed="moveCardToCompleted" @move-card-to-new="moveCardToNew"></column>
-            <column title="Done" :cards="completedColumn" @remove-card="removeCard('completedColumn', $event)" @save-local-storage="saveToLocalStorage"></column>
+            <column class="column columnNew" title="New" :cards="newColumn" :locked="locked" @add-card="addCard('newColumn', $event)" @remove-card="removeCard('newColumn', $event)" @save-local-storage="saveToLocalStorage" @move-card-to-in-progress="moveCardToInProgress" @move-card-to-completed="moveCardToCompleted" @move-card-to-new="moveCardToNew"></column>
+            <column class="column columnProcess" title="In process" :cards="inProgressColumn" @remove-card="removeCard('inProgressColumn', $event)" @save-local-storage="saveToLocalStorage" @move-card-to-in-progress="moveCardToInProgress" @move-card-to-completed="moveCardToCompleted" @move-card-to-new="moveCardToNew"></column>
+            <column class="column columnDone" title="Done" :cards="completedColumn" @remove-card="removeCard('completedColumn', $event)" @save-local-storage="saveToLocalStorage"></column>
         </div>
     `,
     data() {
@@ -171,9 +171,9 @@ Vue.component('column', {
     props: ['title', 'cards', 'locked'],
     template: `
     
-        <div class="column">
-        <button v-if="title === 'New'" @click="addCardWithCustomTitle" ref="new_card" v-bind:disabled="locked">Добавить заметку</button>
+        <div >
             <h2>{{ title }}</h2>
+            <button v-if="title === 'New'" @click="addCardWithCustomTitle" ref="new_card" v-bind:disabled="locked">Добавить заметку</button>
             <card v-for="(card, index) in cards" :key="index" :card="card" :locked="locked" @remove-card="removeCard(index)" @save-local-storage="saveToLocalStorage" @move-card-to-in-progress="moveCardToInProgress" @move-card-to-completed="moveCardToCompleted" @move-card-to-new="moveCardToNew"></card>
         </div>
     `,
@@ -206,7 +206,7 @@ Vue.component('card', {
     props: ['card'],
     template: `
         <div class="card">
-            <h3>{{ card.title }}</h3>
+            <h3 class="card_title">{{ card.title }}</h3>
             <p v-if="card.comment">{{ card.comment }}</p>
             <ul>
                 <li class="li" v-for="(item, index) in card.items" :key="index">
@@ -217,10 +217,10 @@ Vue.component('card', {
                     <button @click="removeItem(index)" v-if="card.items.length > 3 && card.status !== 'Выполненные'" :disabled="card.locked">Удалить</button>
                 </li>
                 <li class="li" v-if="card.items.length < 5 && card.status !== 'Выполненные'">
-                    <button @click="addItem" :disabled="card.locked">Добавить пункт</button>
+                    <button class="buttonAdd" @click="addItem" :disabled="card.locked">Добавить пункт</button>
                 </li>
             </ul>
-            <button v-if="card.status !== 'Выполненные'" @click="removeCard">Удалить заметку</button>
+            <button class="buttonDelete" v-if="card.status !== 'Выполненные'" @click="removeCard">Удалить заметку</button>
             <p v-if="card.status === 'Выполненные'">Дата завершения: {{ card.completionDate }}</p>
         </div>
     `,
